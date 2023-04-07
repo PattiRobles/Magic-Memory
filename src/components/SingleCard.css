@@ -1,0 +1,34 @@
+.card {
+  position: relative;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border: 2px solid #fff;
+  border-radius: 6px;
+}
+/* front of card - picture side */
+/*selected both because front is a descendant of card*/
+/*not really necessary here, just in case the file grows, this will only style 'front' elements that are descendant of 'card' elements*/
+.card .front {
+  transform: rotateY(90deg); /*this flips it, we dont see the fron picture*/
+  transition: all ease-in 0.2s;
+  position: absolute; /*relative to the card parent element, as above, meaning that it sits on top of the back of the card*/
+}
+
+.flipped .front {
+  transform: rotateY(0deg); /*we see the front picture*/
+  transition-delay: 0.2s;
+}
+
+/* back of card  */
+.card .back {
+  transition: all ease-in 0.2s;
+  transition-delay: 0.2s;
+}
+
+.flipped .back {
+  transform: rotateY(90deg);
+  transition-delay: 0s;
+}
